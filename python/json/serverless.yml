@@ -1,0 +1,17 @@
+service: cloud-runtime-python-empty
+
+frameworkVersion: ">=1.2.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: python3.7 # or python3.7, supported as of November 2018
+
+functions:
+  jsonparse:
+    handler: handler.jsonparse
+    events:
+      - http:
+          path: ping
+          method: get
+
+
